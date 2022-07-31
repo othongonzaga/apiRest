@@ -1,8 +1,5 @@
 using AR.Data.Interfaces;
-using AR.Domain;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Threading.Tasks;
 
 namespace AR.Apresentacao.Controllers
 {

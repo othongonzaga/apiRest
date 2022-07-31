@@ -1,5 +1,5 @@
+using AP.Domain;
 using AR.Data.Interfaces;
-using AR.Domain;
 using System.Linq;
 using System.Threading.Tasks;
 
