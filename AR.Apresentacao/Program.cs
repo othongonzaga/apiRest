@@ -7,6 +7,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
+
+builder.Services.AddDbContext<ContextoPrincipal>(options =>
+    options.UseSqlServer(Configuration.GetConnectionString("ApiRestConnectionString")));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
