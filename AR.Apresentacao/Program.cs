@@ -1,3 +1,9 @@
+using AR.Data;
+using AR.Data.Imp;
+using AR.Data.Interfaces;
+using FluentAssertions.Common;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -10,7 +16,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
 
 builder.Services.AddDbContext<ContextoPrincipal>(options =>
-    options.UseSqlServer(Configuration.GetConnectionString("ApiRestConnectionString")));
+    options.UseSqlServer(connectionString: "ApiRestConnectionString"));
 
 var app = builder.Build();
 
