@@ -16,7 +16,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
 
 builder.Services.AddDbContext<ContextoPrincipal>(options =>
-    options.UseSqlServer(connectionString: "ApiRestConnectionString"));
+    options.UseSqlServer("Server =.\\SQLEXPRESS; Database = ApiRestExemplo; Trusted_Connection = yes;"));
 
 var app = builder.Build();
 
