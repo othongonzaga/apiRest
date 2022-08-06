@@ -14,7 +14,7 @@ namespace AR.Data.Imp
             _db = db;
         }
 
-        public async Task Add(Cliente entity)
+        public async Task Post(Cliente entity)
         {
             await _db.AddAsync(entity);
             await _db.SaveChangesAsync();
@@ -23,6 +23,11 @@ namespace AR.Data.Imp
         public IQueryable<Cliente> GetAll()
         {
             return _db.Cliente;
+        }
+
+        public Task RemoveAtt(Cliente entity)
+        {
+            throw new NotImplementedException();
         }
     }
 }

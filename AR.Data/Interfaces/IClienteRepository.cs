@@ -7,6 +7,7 @@ namespace AR.Data.Interfaces
     public interface IClienteRepository
     {
         IQueryable<Cliente> GetAll();
-        Task Add(Cliente entity);
+        Task Post(Cliente entity);
+        Task RemoveAtt(Cliente cliente);
     }
 }

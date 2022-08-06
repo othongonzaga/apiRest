@@ -14,5 +14,15 @@ namespace AP.Domain
         public string Nome { get; set; }
         public string CPF { get; set; }
         public int Idade { get; set; }
+
+        public static object First(Func<object, bool> value)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static Cliente IndexOf(object v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

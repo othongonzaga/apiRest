@@ -22,11 +22,25 @@ namespace AR.Apresentacao.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Add(Cliente cliente)
+        public async Task<IActionResult> Post(Cliente cliente)
         {
             try
             {
-                await _repository.Add(cliente);
+                await _repository.Post(cliente);
+                return StatusCode(201);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> Delete(Guid Id)
+        {
+            try
+            {
+                await _repository.RemoveAtt(Cliente.IndexOf(Cliente.First(x => x.Equals(Id))));
                 return StatusCode(201);
             }
             catch (Exception ex)
