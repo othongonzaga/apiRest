@@ -8,6 +8,6 @@ namespace AR.Data.Interfaces
     {
         IQueryable<Cliente> GetAll();
         Task Post(Cliente entity);
-        Task RemoveAtt(Cliente cliente);
+        Task RemoveAt(Cliente cliente);
     }
 }
