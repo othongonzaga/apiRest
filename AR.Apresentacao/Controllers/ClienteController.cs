@@ -36,12 +36,12 @@ namespace AR.Apresentacao.Controllers
         }
 
         [HttpDelete]
-        [Route("api/delete/{id}")]
-        public async Task<IActionResult> Delete(Guid Id)
+        [Route("delete/{id}")]
+        public async Task<IActionResult> Delete(int id)
         {
             try
             {
-                await _repository.RemoveAt(Id);
+                await _repository.RemoveAt(id);
                 return StatusCode(201);
             }
             catch (Exception ex)

@@ -21,11 +21,11 @@ namespace AR.Data.Imp
             await _db.SaveChangesAsync();
         }
 
-        public async Task<Cliente> Get(Guid id)
+        public async Task<Cliente> Get(int id)
         {
             return await _db.Cliente.Where(x => x.Id == id).FirstOrDefaultAsync();
         }
-        public async Task RemoveAt(Guid id)
+        public async Task RemoveAt(int id)
         {
             var t = await Get(id);
             if (t != null)
