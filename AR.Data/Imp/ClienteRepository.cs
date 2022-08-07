@@ -1,5 +1,6 @@
 using AP.Domain;
 using AR.Data.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -20,9 +21,16 @@ namespace AR.Data.Imp
             await _db.SaveChangesAsync();
         }
 
-        public async Task RemoveAt(Cliente entity)
+        public async Task<Cliente> Get(Guid id)
         {
-            _db.Remove(entity);
+            return await _db.Cliente.Where(x => x.Id == id).FirstOrDefaultAsync();
+        }
+        public async Task RemoveAt(Guid id)
+        {
+            var t = await Get(id);
+            if (t != null)
+                _db.Remove(t);
+
             await _db.SaveChangesAsync();
         }
 
