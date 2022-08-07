@@ -25,7 +25,7 @@ namespace AR.Data.Imp
             return _db.Cliente;
         }
 
-        public Task RemoveAt(Cliente entity)
+        public Task RemoveAt(Guid id)
         {
             throw new NotImplementedException();
         }

@@ -40,7 +40,7 @@ namespace AR.Apresentacao.Controllers
         {
             try
             {
-                await _repository.RemoveAt(Cliente.IndexOf(Cliente.First(x => x.Equals(Id))));
+                await _repository.RemoveAt(Id);
                 return StatusCode(201);
             }
             catch (Exception ex)
