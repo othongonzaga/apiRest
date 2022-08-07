@@ -36,6 +36,7 @@ namespace AR.Apresentacao.Controllers
         }
 
         [HttpDelete]
+        [Route("api/delete/{id}")]
         public async Task<IActionResult> Delete(Guid Id)
         {
             try

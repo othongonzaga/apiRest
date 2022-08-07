@@ -20,14 +20,15 @@ namespace AR.Data.Imp
             await _db.SaveChangesAsync();
         }
 
+        public async Task RemoveAt(Cliente entity)
+        {
+            _db.Remove(entity);
+            await _db.SaveChangesAsync();
+        }
+
         public IQueryable<Cliente> GetAll()
         {
             return _db.Cliente;
-        }
-
-        public Task RemoveAt(Guid id)
-        {
-            throw new NotImplementedException();
         }
     }
 }
